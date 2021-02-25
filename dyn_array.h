@@ -8,4 +8,7 @@ typedef struct DynamicArray {
     size_t amount_of_items;
 } DynamicArray_;
 
+DynamicArray_* init_array();
+DynamicArray_* append(DynamicArray_* array, char* _title, void* _item, size_t item_size);
+
 #endif
