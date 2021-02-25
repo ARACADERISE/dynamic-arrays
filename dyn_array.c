@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-/* Array struct that will store ItemTitle and ItemDetails */
-typedef struct DynamicArray {
-    char** ItemTitles; // this will always be a string
-    void** ItemDetails; // we don't know what we're storing
-    size_t current_size; // this will be the allocated size for the current ItemDetail
-    size_t amount_of_items;
-} DynamicArray_;
+#include "dyn_array.h"
 
 DynamicArray_* init_array() {
     DynamicArray_* array = calloc(1,sizeof(*array));
@@ -18,7 +11,6 @@ DynamicArray_* init_array() {
     
     return array;
 }
-
 
 DynamicArray_* append(DynamicArray_* array, char* _title, void* _item, size_t item_size) {
     array->amount_of_items++;
